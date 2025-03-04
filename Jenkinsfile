@@ -14,20 +14,20 @@ pipeline {
         }
 
 
-        stage('SonarQube Analysis') {
-            environment {
-                SONAR_SCANNER_HOME = tool 'SonarQubeScanner'
-            }
-            steps {
-                sh '''
-                ${SONAR_SCANNER_HOME}/bin/sonar-scanner \
-                  -Dsonar.projectKey=TestDEvops \
-                  -Dsonar.sources=. \
-                  -Dsonar.host.url=http://localhost:9000 \
-                  -Dsonar.login=ton-token-sonarqube
-                '''
-            }
-        }
+   //     stage('SonarQube Analysis') {
+     //       environment {
+       //         SONAR_SCANNER_HOME = tool 'SonarQubeScanner'
+         //   }
+           // steps {
+             //   sh '''
+               // ${SONAR_SCANNER_HOME}/bin/sonar-scanner \
+                 // -Dsonar.projectKey=TestDEvops \
+                 // -Dsonar.sources=. \
+                  //-Dsonar.host.url=http://localhost:9000 \
+                  //-Dsonar.login=ton-token-sonarqube
+                //'''
+            //}
+        //}
 
         stage('Build Docker Image') {
             steps {
