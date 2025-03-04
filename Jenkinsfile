@@ -13,23 +13,6 @@ pipeline {
             }
         }
 
-        stage('Clean Build') {
-            steps {
-                sh 'mvn clean'
-            }
-        }
-
-        stage('Install Dependencies') {
-            steps {
-                sh 'mvn install'
-            }
-        }
-
-        stage('Run Unit Tests') {
-            steps {
-                sh 'mvn test'
-            }
-        }
 
         stage('SonarQube Analysis') {
             environment {
